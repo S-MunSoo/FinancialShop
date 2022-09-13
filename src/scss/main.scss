@@ -1,0 +1,17 @@
+@import './font';
+@import './color';
+
+.App {
+  width: 100vw;
+  background-color: $mainBG;
+  position: absolute;
+  z-index: -4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'SDGothicM';
+}

@@ -1,0 +1,163 @@
+@import './main.scss';
+
+.sinUp {
+  position: relative;
+}
+.circle {
+  position: fixed;
+  bottom: 0px;
+  right: -50px;
+  width: 230px;
+  height: 230px;
+  border-radius: 0 0 0 50%;
+  background-color: #007bff58;
+  z-index: -10;
+  filter: blur(50px);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 130px 40px 0;
+  font-family: 'SDGothicM';
+}
+.title {
+  font-family: 'SDGothicL';
+  font-size: 20px;
+  display: block;
+  width: 280px;
+  p {
+    display: block;
+    padding: 10px 0;
+    span {
+      font-family: 'SDGothicH';
+      font-size: 32px;
+      line-height: 0;
+      margin-left: 6px;
+      color: $blue;
+      text-shadow: 4px 4px #ffe139af;
+    }
+  }
+}
+.inputGroup {
+  display: block;
+  margin: 30px 0;
+}
+.input {
+  margin: 13px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  label {
+    font-size: 20px;
+    color: $iconColor;
+    margin-right: 8px;
+    padding-top: 5px;
+  }
+  input {
+    width: 250px;
+    height: 25px;
+    border: 0.7px solid $inputBorder;
+    border-radius: 10px;
+    background-color: $inputBG;
+    padding: 3px 13px;
+    font-size: 13px;
+    &::placeholder {
+      color: #d1d1d6;
+    }
+    &:focus {
+      border: 0.7px solid $inputFocus;
+      outline: none;
+      box-shadow: 0 0 1.5px $inputFocus;
+    }
+  }
+}
+
+.email {
+  margin: 13px 0;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  text-align: center;
+  label {
+    font-size: 20px;
+    color: $iconColor;
+    margin-right: 8px;
+    padding-top: 5px;
+  }
+  input {
+    width: 65px;
+    height: 25px;
+    border: 0.7px solid $inputBorder;
+    border-radius: 10px;
+    background-color: $inputBG;
+    padding: 3px 10px;
+    font-size: 13px;
+    &::placeholder {
+      color: #d1d1d6;
+    }
+    &:focus {
+      border: 0.7px solid $inputFocus;
+      outline: none;
+      box-shadow: 0 0 1.5px $inputFocus;
+    }
+  }
+  p {
+    padding: 10px 3px;
+  }
+  select {
+    width: 83px;
+    height: 31.4px;
+    border: 0.7px solid $inputBorder;
+    border-radius: 10px;
+    background-color: $inputBG;
+    padding: 2.5px 20px 2.5px 0px;
+    font-size: 13px;
+    margin-left: 5px;
+    &::placeholder {
+      color: #d1d1d6;
+    }
+  }
+}
+
+.btn {
+  height: 40px;
+  width: 160px;
+  border-radius: 5px;
+  margin: 0 auto;
+  border: none;
+  background-color: $blue;
+  color: #fff;
+  font-size: 17px;
+  font-family: 'SDGothicB';
+}
+
+.gologin {
+  margin: 20px 0 10px;
+  font-size: 14px;
+  font-family: 'SDGothicB';
+}
+
+.loginbtn {
+  height: 40px;
+  width: 160px;
+  border-radius: 5px;
+  background-color: $blue;
+  color: #fff;
+  font-size: 17px;
+  font-family: 'SDGothicB';
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a:link,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
