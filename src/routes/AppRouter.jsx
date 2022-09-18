@@ -6,6 +6,7 @@ import NavTop from '../components/NavTop'
 import { CookiesProvider } from 'react-cookie'
 import Products from '../pages/Products'
 import Cart from '../pages/Cart'
+import NavBottom from '../components/NavBottom'
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
         <Route path='/signin' element={<SignIn />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
+      <NavBottom />
     </CookiesProvider>
   )
 }
