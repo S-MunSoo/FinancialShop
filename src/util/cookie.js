@@ -2,8 +2,8 @@ import { Cookies } from 'react-cookie'
 
 const cookies = new Cookies()
 
-export const setCookies = ({ accessToken, refreshToken }) => {
-  // 토큰갱신
+// 토큰 설정 셋팅
+export const setCookie = ({ accessToken, refreshToken }) => {
   const expires = new Date()
   expires.setMinutes(expires.getMinutes() + 30)
   cookies.set('refreshToken', refreshToken, { path: '/' })

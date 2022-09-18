@@ -1,0 +1,118 @@
+@import './main.scss';
+
+$hbgBarHeight: 2px;
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.top {
+  display: block;
+  position: fixed;
+  padding-bottom: 10px;
+  top: 0;
+  z-index: 9;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: $mainBG;
+  box-shadow: 0px 3px 2px -0.5px rgba(0, 0, 0, 0.18);
+}
+.notch {
+  display: block;
+}
+.navbar {
+  display: flex;
+  float: right;
+  margin-right: 20px;
+  margin-top: 8px;
+}
+.lineGroup {
+  display: block;
+  width: 18px;
+  margin-left: 3px;
+  .lineTop {
+    height: $hbgBarHeight;
+    background-color: $hbgBarColor;
+    border-radius: 1px;
+    margin-top: 4.2px;
+    margin-bottom: 4px;
+  }
+  .lineMiddle {
+    height: $hbgBarHeight;
+    background-color: $hbgBarColor;
+    border-radius: 1px;
+    margin-bottom: 4px;
+  }
+  .lineBottom {
+    height: $hbgBarHeight;
+    border-radius: 1px;
+    background-color: $hbgBarColor;
+  }
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: $modalBG;
+  border-radius: 13px;
+  margin: 0 10px;
+  font-family: 'SDGothicM';
+  overflow: hidden;
+
+  & > *:not(:last-child) {
+    border-bottom: $modalBorder 0.5px solid;
+  }
+  .menuTitle {
+    color: $menuTitle;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 26px;
+    background-color: $menuTitleBG;
+    span {
+      color: $menuTitleSpan;
+      font-size: 20px;
+      font-family: 'SDGothicB';
+    }
+  }
+  .menuList {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: $menuList;
+    padding: 20px;
+    &:hover {
+      background-color: $menuHover;
+    }
+  }
+  .logout {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: $red;
+    padding: 20px;
+  }
+}
+.modalBtn {
+  display: block;
+  height: 25px;
+  background-color: $modalBtn;
+  border-radius: 13px;
+  font-size: 20px;
+  line-height: 25px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px 10px 20px;
+  font-family: 'SDGothicM';
+  color: $blue;
+}
+
+.refresh {
+  position: absolute;
+  left: 20px;
+  top: 48px;
+  border: none;
+  background-color: $hbgBarHeight;
+  height: 30px;
+  border-radius: 8px;
+  font-family: 'SDGothicB';
+}

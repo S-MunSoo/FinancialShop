@@ -12,9 +12,19 @@ export const userSlice = createSlice({
   reducers: {
     openModal(state, action) {
       state.modalVisible = action.payload
+    },
+    setUser(state, action) {
+      Object.keys(action.payload).forEach(key => {
+        state[key] = action.payload[key]
+      })
+    },
+    logOut(state) {
+      Object.keys(state).forEach(key => {
+        state[key] = null
+      })
     }
   }
 })
 
-export const { openModal } = userSlice.actions
+export const { openModal, setUser, logOut } = userSlice.actions
 export default userSlice.reducer

@@ -5,14 +5,39 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from '~/scss/SignIn.module.scss'
 import { useDispatch } from 'react-redux'
-import { openModal } from '../../store/slices/userSlice'
+import { openModal, setUser } from '../../store/slices/userSlice'
+import { useGetLoginMutation } from '../../store/api/userApiSlice'
+import { Alert } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 
 const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [login] = useGetLoginMutation()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const isOpen = useSelector(state => state.user).modalVisible
+
+  const signIn = async () => {
+    if (!email || password) {
+      dispatch(openModal(true))
+      return
+    }
+    const data = {
+      email,
+      password
+    }
+    try {
+      const userData = await login(data).unwrap()
+      dispatch(setUser(userData))
+      userData.isNotFirst ? navigate('/') : navigate('/userdetail')
+      setEmail('')
+      setPassword('')
+    } catch (error) {
+      dispatch(openModal(true))
+      console.log(error)
+    }
+  }
 
   return (
     <div className={styles.signIn}>
@@ -56,12 +81,21 @@ const SignIn = () => {
             />
           </div>
         </div>
-        <button className={styles.btn}>로그인</button>
+        <button className={styles.btn} onClick={signIn}>
+          로그인
+        </button>
         <p className={styles.goSignUp}>SHARE WE가 처음이신가요?</p>
         <Link to='/signup' className={styles.signupbtn}>
           <span>Share We?</span>
         </Link>
       </div>
+      {isOpen ? (
+        <Alert
+          title={'존재하지 않는 회원정보'}
+          detail={'아이디와 비밀번호를 다시 확인해주세요.'}
+          confirm={'확인'}
+        />
+      ) : null}
     </div>
   )
 }
